@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sitemap otomatis dari blog Labibal Wasi." />
+    <meta property="og:title" content="Sitemap - Labibal Wasi" />
+    <meta property="og:description" content="Daftar semua artikel terbaru dari Labibal Wasi." />
+    <meta property="og:image" content="https://www.labibalwasi.com/img/og-default.jpg" />
+    <title>Sitemap | Labibal Wasi</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Sitemap Blog Labibal Wasi</h1>
+      <p>Daftar seluruh artikel yang pernah dipublikasikan di blog utama.</p>
+    </header>
+
+    <main id="content">
+      <ul class="sitemap-list">
+        <% if (articles.length > 0) { %>
+        <% articles.forEach(article => { %>
+        <li>
+          <span class="date"><%= article.formattedDate %></span>
+          <a href="<%= article.link %>" target="_blank"><%= article.title %></a>
+        </li>
+        <% }) %>
+        <% } else { %>
+        <p>Tidak ada artikel ditemukan.</p>
+        <% } %>
+      </ul>
+    </main>
+
+    <footer>
+      <p>
+        © <%= new Date().getFullYear() %>
+        <a href="https://www.labibalwasi.com" target="_blank">Labibal Wasi</a> — Semua hak cipta dilindungi.
+      </p>
+    </footer>
+  </body>
+</html>
